@@ -8,10 +8,12 @@ nox.options.sessions = ["lint", "test", "docs", "build"]
 
 VERSIONS = ["3.9", "3.10"]
 
+
 @nox.session(python=VERSIONS)
 def tests(checker): 
     tmpdir = session.create_tmp()
     session.install("-r", "requirements-tests.txt")
+    session.install("-e", ".")
     tests = session.posargs or ["{{project-name}}.tests"]
     session.run(
         "coverage",
@@ -34,18 +36,29 @@ def tests(checker):
         env=dict(COVERAGE_FILE=os.path.join(tmpdir, "coverage")),
     )
 
+    
+@nox.session(python=VERSIONS[-1])
+def build(session):
+    session.install("build")
+    session.run("python", "-m", "build", "--wheel")
+
 
 @nox.session(python=VERSIONS[-1])
 def lint(session):
     files = ["src/", "noxfile.py"]
-    session.install("-e", ".[lint]")
+    session.install("-r", "requirements-lint.txt")
+    session.install("-e", ".")
     session.run("black", "--check", "--diff", *files)
-    black_compat = ["--max-line-length=88", "--ignore=E203"]
-    session.run("flake8", *black_compat, "src/pycus")
-    session.run("bandit", "src/pycus")
+    black_compat = ["--max-line-length=88", "--ignore=E203,E503"]
+    session.run("flake8", *black_compat, "src/")
+
+
+@nox.session(python=VERSIONS[-1])
+def mypy(session):
+    session.install("-r", "requirements-mypy.txt")
+    session.install("-e", ".")
     session.run(
         "mypy",
-        "--disallow-untyped-defs",
         "--warn-unused-ignores",
         "--ignore-missing-imports",
         "src/",

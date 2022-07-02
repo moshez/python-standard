@@ -11,6 +11,12 @@ description = "{{short-description}}"
 readme = "README.rst"
 authors = [{name = "{{maintainer-name}}", email = "{{maintainer-email}}"}]
 
+[project.optional-dependencies]
+tests = ["virtue", "pyhamcrest"]
+mypy = ["mypy"]
+lint = ["flake8", "black"]
+docs = ["sphinx"]
+
 [project.license]
 text = """
 Permission is hereby granted, free of charge, to any person obtaining a
