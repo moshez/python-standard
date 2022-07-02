@@ -14,12 +14,12 @@ def tests(checker):
     tmpdir = session.create_tmp()
     session.install("-r", "requirements-tests.txt")
     session.install("-e", ".")
-    tests = session.posargs or ["{{project-name}}.tests"]
+    tests = session.posargs or ["{{project_name}}.tests"]
     session.run(
         "coverage",
         "run",
         "--branch",
-        "--source={{project-name}}",
+        "--source={{project_name}}",
         "--omit=**/__main__.py",
         "-m",
         "virtue",

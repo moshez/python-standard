@@ -5,11 +5,11 @@ requires = [
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "{{project-name}}"
+name = "{{project_name}}"
 version = "2022.3.6.2"
-description = "{{short-description}}"
+description = "{{short_description}}"
 readme = "README.rst"
-authors = [{name = "{{maintainer-name}}", email = "{{maintainer-email}}"}]
+authors = [{name = "{{maintainer_name}}", email = "{{maintainer_email}}"}]
 
 [project.optional-dependencies]
 tests = ["virtue", "pyhamcrest"]
@@ -38,4 +38,4 @@ OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 """
 
 [project.urls]
-Homepage = "https://github.com/{{organization}}/{{project-name}}"
+Homepage = "https://github.com/{{organization}}/{{project_name}}"
