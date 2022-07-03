@@ -114,7 +114,16 @@ Python packaging index of your choice.
 Documenting
 ^^^^^^^^^^^
 
-TBD
+The documentation is set up to use
+`sphinx`_.
+It automatically ignores
+Jupyter-created
+temporary files,
+to allow including notebooks in a natural way.
+
+It suggests a quick start guide,
+followed by an API reference.
+Adding new sections is sometimes a good idea.
 
 Continuous Integration
 ^^^^^^^^^^^^^^^^^^^^^^
