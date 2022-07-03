@@ -10,7 +10,7 @@ VERSIONS = ["3.9", "3.10"]
 
 
 @nox.session(python=VERSIONS)
-def tests(checker): 
+def tests(session):
     tmpdir = session.create_tmp()
     session.install("-r", "requirements-tests.txt")
     session.install("-e", ".")
@@ -36,7 +36,7 @@ def tests(checker):
         env=dict(COVERAGE_FILE=os.path.join(tmpdir, "coverage")),
     )
 
-    
+
 @nox.session(python=VERSIONS[-1])
 def build(session):
     session.install("build")
@@ -77,7 +77,6 @@ def docs(session):
     sphinx = ["sphinx-build", "-b", "html", "-W", "-d", doctrees, ".", html]
     session.cd("doc")
     session.run(*sphinx)
-
 
 
 @nox.session(python=VERSIONS[-1])
