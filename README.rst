@@ -2,6 +2,17 @@ Python Project Copier Template
 ==============================
 
 This template produces a Python project.
+The most
+"interesting"
+choices it makes are:
+
+* Use `nox`_ to run various code checkers.
+* Use `virtue`_ to run the unit tests.
+* Use `pyproject.toml`_-based `setuptools`_ to build a package.
+* ``100%`` code coverage on every unit test run.
+
+All other tooling choices are either vanilla,
+or a consequence of using these tools.
 
 Quickstart
 ----------
@@ -17,14 +28,14 @@ and
     $ cd TARGET_DIRECTORY
     $ nox -e refresh_deps
 
-.. note::
-   Running
-   :code:`nox -e refresh_deps`
-   produces
-   `requirements-*.txt`
-   files,
-   which are essential to the other sessions in
-   :code:`nox`.
+**Note**:
+Running
+:code:`nox -e refresh_deps`
+produces
+:code:`requirements-*.txt`
+files,
+which are essential to the other sessions in
+:code:`nox`.
 
 .. _copier: https://copier.readthedocs.io/en/stable/
 
@@ -55,7 +66,7 @@ is only a runner:
 it does not have test cases or assertions built in.
 In order to write test cases,
 use
-:code:``unittest.TestCase`.
+:code:`unittest.TestCase`.
 The
 `hamcrest`_
 library is already included in the test dependencies,
@@ -146,6 +157,7 @@ Python Ecosystem Stack
   `nox`_
   as its checker runner.
 * For packaging:
+
   * `build`_
     for building a wheel.
   * `pyproject.toml`_
@@ -155,22 +167,36 @@ Python Ecosystem Stack
   * `pip-compile`_
     for pinning dependencies.
 * For tests:
+
   * `virtue`_
-     as test runner.
-  *  `hamcrest`_
-     as assertion library.
+    as test runner.
+  * `hamcrest`_
+    as assertion library.
   * `coverage`_
     for coverage testing.
     Coverage is set to fail below 100%.
     Explicitly mark untested code with
     :code:`# pragma: no coverage`.
 * For static checking:
+
   * `black`_
     for automatically fixable errors.
   * `flake8`_
     for other issues.
   * `mypy`_
     for type checking.
+* For documentation:
+
+  * `sphinx`_
+    to generate documents.
+  * `sphinx-apidoc`_
+    to render doc strings.
+* For continuous integration:
+
+  * `GitHub Actions`_
+    for running the
+    :code:`nox`
+    checkers.
 
 .. _nox: https://nox.thea.codes/en/stable/
 .. _virtue: https://virtue.readthedocs.io/en/stable/
@@ -182,3 +208,6 @@ Python Ecosystem Stack
 .. _pyproject.toml: https://pip.pypa.io/en/stable/reference/build-system/pyproject-toml/
 .. _setuptools: https://setuptools.pypa.io/en/stable/index.html
 .. _pip-compile: https://github.com/jazzband/pip-tools
+.. _sphinx-apidoc: https://www.sphinx-doc.org/en/master/man/sphinx-apidoc.html
+.. _GitHub Actions: https://github.com/features/actions
+.. _sphinx: https://www.sphinx-doc.org/en/master/index.html
