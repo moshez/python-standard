@@ -17,14 +17,14 @@ and
     $ cd TARGET_DIRECTORY
     $ nox -e refresh_deps
 
-.. note::
-   Running
-   :code:`nox -e refresh_deps`
-   produces
-   `requirements-*.txt`
-   files,
-   which are essential to the other sessions in
-   :code:`nox`.
+**Note:**:
+Running
+:code:`nox -e refresh_deps`
+produces
+:code:`requirements-*.txt`
+files,
+which are essential to the other sessions in
+:code:`nox`.
 
 .. _copier: https://copier.readthedocs.io/en/stable/
 
@@ -146,6 +146,7 @@ Python Ecosystem Stack
   `nox`_
   as its checker runner.
 * For packaging:
+
   * `build`_
     for building a wheel.
   * `pyproject.toml`_
@@ -155,6 +156,7 @@ Python Ecosystem Stack
   * `pip-compile`_
     for pinning dependencies.
 * For tests:
+
   * `virtue`_
      as test runner.
   *  `hamcrest`_
@@ -165,12 +167,21 @@ Python Ecosystem Stack
     Explicitly mark untested code with
     :code:`# pragma: no coverage`.
 * For static checking:
+
   * `black`_
     for automatically fixable errors.
   * `flake8`_
     for other issues.
   * `mypy`_
     for type checking.
+* For documentation:
+
+  * `sphinx`_
+    to generate documents.
+  * `sphinx-apidoc`_
+    to render doc strings.
+* For continuous integration:
+  * `GitHub Actions`_
 
 .. _nox: https://nox.thea.codes/en/stable/
 .. _virtue: https://virtue.readthedocs.io/en/stable/
@@ -182,3 +193,6 @@ Python Ecosystem Stack
 .. _pyproject.toml: https://pip.pypa.io/en/stable/reference/build-system/pyproject-toml/
 .. _setuptools: https://setuptools.pypa.io/en/stable/index.html
 .. _pip-compile: https://github.com/jazzband/pip-tools
+.. _sphinx-apidoc: https://www.sphinx-doc.org/en/master/man/sphinx-apidoc.html
+.. _GitHub Actions: https://github.com/features/actions
+.. _sphinx: https://www.sphinx-doc.org/en/master/index.html
