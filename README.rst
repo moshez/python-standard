@@ -211,3 +211,4 @@ Python Ecosystem Stack
 .. _sphinx-apidoc: https://www.sphinx-doc.org/en/master/man/sphinx-apidoc.html
 .. _GitHub Actions: https://github.com/features/actions
 .. _sphinx: https://www.sphinx-doc.org/en/master/index.html
+.. _build: https://pypa-build.readthedocs.io/en/latest/
