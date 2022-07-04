@@ -149,9 +149,79 @@ achieves full coverage.
 It also runs the tests only on
 Ubuntu.
 
+Guiding principles
+------------------
 
-Python Ecosystem Stack
-----------------------
+**Note:**
+This section explains
+Moshe's
+personal opinions.
+
+The choice of tooling is guided by one principle:
+maximize ergonomics,
+minimize magic.
+
+Even after years of using
+:code:`tox`,
+I sometimes find it non-trivial to do stuff.
+How do you minimize copy paste
+while setting up each command exactly right?
+With
+:code:`nox`,
+the syntax,
+and semantics,
+are Python code.
+
+The
+:code:`pytest`
+runner has a lot of magic.
+It finds fixtures,
+has complicated test finding algorithms,
+and,
+most famously,
+fancy
+:code:`assert`
+rewrite logic.
+
+The
+`hamcrest`_
+library
+is an
+*explicit*
+"fancy assert"
+library.
+It is based on regular Python functions
+and Python objects,
+and allows explicit control on how to make the
+assertions useful.
+
+With that out of the way,
+`virtue`_
+focuses on running tests,
+not finding them.
+Tests have to be Python modules,
+with all the regular semantics that comes with that.
+
+For
+"fixtures",
+it is possible to define functions in
+test-helper modules explicitly.
+With
+:code:`unittest.TestCase`'s
+support for
+:code:`setUp`
+and
+:code:`addCleanup`,
+it is possible to do setup and teardown.
+
+One loss in ergonomics is that now
+even simple tests need to be in a
+:code:`TestCase`.
+The benefit in reducing the magic
+is one that offsets it for me.
+
+Detailed Python Ecosystem Stack
+-------------------------------
 
 * Uses
   `nox`_
