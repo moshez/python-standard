@@ -128,7 +128,15 @@ Adding new sections is sometimes a good idea.
 Continuous Integration
 ^^^^^^^^^^^^^^^^^^^^^^
 
-TBD
+The continuous integration configured is
+GitHub Actions.
+This is a relatively simple configuration.
+
+It assumes that each interpreter,
+on each operating system,
+achieves full coverage.
+It also runs the tests only on
+Ubuntu.
 
 
 Python Ecosystem Stack
