@@ -17,7 +17,7 @@ and
     $ cd TARGET_DIRECTORY
     $ nox -e refresh_deps
 
-**Note:**:
+**Note**:
 Running
 :code:`nox -e refresh_deps`
 produces
@@ -55,7 +55,7 @@ is only a runner:
 it does not have test cases or assertions built in.
 In order to write test cases,
 use
-:code:``unittest.TestCase`.
+:code:`unittest.TestCase`.
 The
 `hamcrest`_
 library is already included in the test dependencies,
@@ -158,9 +158,9 @@ Python Ecosystem Stack
 * For tests:
 
   * `virtue`_
-     as test runner.
+    as test runner.
   *  `hamcrest`_
-     as assertion library.
+    as assertion library.
   * `coverage`_
     for coverage testing.
     Coverage is set to fail below 100%.
