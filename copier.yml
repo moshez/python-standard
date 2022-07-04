@@ -1,0 +1,22 @@
+project_name:
+    type: str
+    help: What is your project name?
+
+short_description:
+    type: str
+    help: Short description
+
+maintainer_name:
+    type: str
+    help: Maintainer name
+    default: "No Maintainer"
+
+maintainer_email:
+    type: str
+    help: Maintainer email
+    default: "no-maintainer@example.org"
+
+organization:
+    type: str
+    help: GitHub organization
+    default: "no-organization"
