@@ -159,7 +159,7 @@ Python Ecosystem Stack
 
   * `virtue`_
     as test runner.
-  *  `hamcrest`_
+  * `hamcrest`_
     as assertion library.
   * `coverage`_
     for coverage testing.
@@ -181,7 +181,11 @@ Python Ecosystem Stack
   * `sphinx-apidoc`_
     to render doc strings.
 * For continuous integration:
+
   * `GitHub Actions`_
+    for running the
+    :code:`nox`
+    checkers.
 
 .. _nox: https://nox.thea.codes/en/stable/
 .. _virtue: https://virtue.readthedocs.io/en/stable/
