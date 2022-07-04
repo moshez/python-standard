@@ -2,6 +2,17 @@ Python Project Copier Template
 ==============================
 
 This template produces a Python project.
+The most
+"interesting"
+choices it makes are:
+
+* Use `nox`_ to run various code checkers.
+* Use `virtue`_ to run the unit tests.
+* Use `pyproject.toml`_-based `setuptools`_ to build a package.
+* ``100%`` code coverage on every unit test run.
+
+All other tooling choices are either vanilla,
+or a consequence of using these tools.
 
 Quickstart
 ----------
