@@ -24,8 +24,8 @@ and
 
 .. code::
 
-    $ copier gh:moshez/python-standard.git <TARGET_DIRECTORY>
     $ cd TARGET_DIRECTORY
+    $ copier copy gh:moshez/python-standard.git .
     $ nox -e refresh_deps
 
 **Note**:
