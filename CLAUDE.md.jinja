@@ -104,9 +104,9 @@ This enables:
 Keep constructors boring - only assign parameters to attributes:
 
 ```python
-import attrs
+from dataclasses import dataclass
 
-@attrs.frozen
+@dataclass(frozen=True, slots=True, kw_only=True)
 class DataProcessor:
     client: HTTPClient
     config: Config
@@ -124,18 +124,18 @@ Never do I/O or complex object creation in `__init__`.
 
 ### Avoid Mutation
 
-Prefer immutable objects using `@attrs.frozen`:
+Prefer immutable objects using `@dataclass(frozen=True)`:
 
 ```python
-import attrs
+from dataclasses import dataclass, replace
 
-@attrs.frozen
+@dataclass(frozen=True, slots=True)
 class Settings:
     timeout: int
     retries: int
 
 # Create modified copies instead of mutating
-new_settings = attrs.evolve(settings, timeout=30)
+new_settings = replace(settings, timeout=30)
 ```
 
 ### Avoid Hiding
@@ -186,13 +186,15 @@ class MyHandler(BaseHandler):
 
 Good:
 ```python
+from dataclasses import dataclass
+
 class Validator(Protocol):
     def validate(self, data: Data) -> None: ...
 
 class Processor(Protocol):
     def process(self, data: Data) -> Result: ...
 
-@attrs.frozen
+@dataclass(frozen=True, slots=True)
 class Handler:
     validator: Validator
     processor: Processor
