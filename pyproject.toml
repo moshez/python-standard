@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "seasonable"
+version = "2021.9.1"
+description = "API abstractions"
+readme = "README.rst"
+license = "BSD-3-Clause"
+
+[project.optional-dependencies]
+test = [
+  "coverage",
+  "virtue",
+]
+lint = [
+  "black",
+  "mypy",
+  "flake8",
+  "pylint",
+  "stolid",
+]
+doc = ["sphinx"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
