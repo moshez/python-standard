@@ -7,7 +7,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "{{project_name}}"
-version = "2022.3.6.2"
+dynamic = ["version"]
 description = "{{short_description}}"
 readme = "README.rst"
 authors = [{name = "{{maintainer_name}}", email = "{{maintainer_email}}"}]
@@ -15,7 +15,7 @@ authors = [{name = "{{maintainer_name}}", email = "{{maintainer_email}}"}]
 [project.optional-dependencies]
 tests = ["virtue", "pyhamcrest", "coverage"]
 mypy = ["mypy"]
-lint = ["flake8", "black"]
+lint = ["flake8", "black", "stolid"]
 docs = ["sphinx"]
 
 [project.license]
