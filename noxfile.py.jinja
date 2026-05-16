@@ -61,6 +61,10 @@ def mypy(session):
         "mypy",
         "--warn-unused-ignores",
         "--ignore-missing-imports",
+        "--disallow-untyped-defs",
+        "--disallow-incomplete-defs",
+        "--disallow-any-explicit",
+        "--disallow-any-generics",
         "src/",
     )
 
