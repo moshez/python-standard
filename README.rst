@@ -251,8 +251,9 @@ Detailed Python Ecosystem Stack
 
   * `black`_
     for automatically fixable errors.
-  * `flake8`_
-    for other issues.
+  * `stolid`_
+    for enforcing the standard-template conventions
+    (it runs `flake8`_ and then its own cross-file checks).
   * `mypy`_
     for type checking.
 * For documentation:
@@ -273,6 +274,7 @@ Detailed Python Ecosystem Stack
 .. _hamcrest: https://pyhamcrest.readthedocs.io/en/stable/
 .. _black: https://black.readthedocs.io/en/stable/
 .. _flake8: https://flake8.pycqa.org/en/latest/
+.. _stolid: https://github.com/moshez/stolid
 .. _coverage: https://coverage.readthedocs.io/en/stable/
 .. _mypy: https://mypy.readthedocs.io/en/stable/
 .. _pyproject.toml: https://pip.pypa.io/en/stable/reference/build-system/pyproject-toml/

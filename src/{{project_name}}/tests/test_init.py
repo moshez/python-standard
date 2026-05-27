@@ -1,3 +1,5 @@
+"""Smoke tests for the {{project_name}} package."""
+
 import unittest
 from hamcrest import assert_that, contains_string
 
@@ -5,5 +7,8 @@ from .. import __version__
 
 
 class TestInit(unittest.TestCase):
-    def test_version(self):
+    """Check that package-level attributes are wired up."""
+
+    def test_version(self) -> None:
+        """The package exposes a dotted version string."""
         assert_that(__version__, contains_string("."))
