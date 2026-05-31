@@ -158,6 +158,7 @@ def refresh_deps(session):
     for deps in ["tests", "docs", "lint", "mypy"]:
         session.run(
             "pip-compile",
+            "--upgrade",
             "--extra",
             deps,
             "pyproject.toml",
