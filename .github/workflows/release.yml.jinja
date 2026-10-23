@@ -12,14 +12,14 @@ jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
-    permissions:
-      id-token: write
     steps:
       - uses: actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab # v3.5.2
 
       - uses: actions/setup-python@57ded4d7d5e986d7296eab16560982c6dd7c923b
         with:
-          python-version: "3.x"
+          # PUBLISH_PYTHON in noxfile.py: the Python the publish action
+          # uploads with, which dry_release checks against.
+          python-version: "3.13"
           cache: "pip"
           cache-dependency-path: pyproject.toml
 

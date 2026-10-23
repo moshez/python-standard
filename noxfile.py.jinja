@@ -15,7 +15,8 @@ PUBLISH_ACTION = "pypa/gh-action-pypi-publish"
 # Committed so nox can select it before the session runs, but verified
 # against the pinned action at runtime (_verify_publish_python) so it cannot
 # silently drift. The dry_release row in pr-main.yml must use this version
-# too, or nox's --python filter fails the job.
+# too, or nox's --python filter fails the job, and so must the build job in
+# release.yml, so released distributions are built the way they are checked.
 PUBLISH_PYTHON = "3.13"
 
 
@@ -42,8 +43,9 @@ def _verify_publish_python(sha):
     if found != PUBLISH_PYTHON:
         raise ValueError(
             f"{PUBLISH_ACTION}@{sha} uploads on Python {found}, but "
-            f"PUBLISH_PYTHON is {PUBLISH_PYTHON}. Update PUBLISH_PYTHON and "
-            "the dry_release row in pr-main.yml to match the pinned action."
+            f"PUBLISH_PYTHON is {PUBLISH_PYTHON}. Update PUBLISH_PYTHON, the "
+            "dry_release row in pr-main.yml, and the build job's python-version "
+            "in release.yml to match the pinned action."
         )
 
 
